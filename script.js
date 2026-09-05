@@ -9,7 +9,7 @@ const Tikey = document.querySelector(".Q");
 const Dokey2 = document.querySelector(".G");
 const audiocontext = new (window.AudioContext || window.webkitAudioContext)();
 
-function playnote(frequency, duration) {
+function playnote(frequency, duration, keyelement) {
   const oscillator = audiocontext.createOscillator();
   oscillator.type = "sine";
   oscillator.frequency.value = frequency;
@@ -26,12 +26,17 @@ function playnote(frequency, duration) {
 
   oscillator.start();
   oscillator.stop(audiocontext.currentTime + duration);
+
+  keyelement.classList.add("playing");
+  setTimeout(() => {
+    keyelement.classList.remove("playing");
+  }, 150);
 }
 
 notes.forEach(function (note) {
   note.addEventListener("click", function () {
     const frequency = Number(note.dataset.freq);
-    playnote(frequency, 0.5);
+    playnote(frequency, 0.5, note);
   });
 });
 
@@ -46,27 +51,27 @@ document.addEventListener("keydown", function (event) {
   const dofrequency2 = Number(Dokey2.dataset.freq);
 
   if (event.key == "a") {
-    playnote(dofrequency, 0.5);
+    playnote(dofrequency, 0.5, Dokey);
   }
   if (event.key == "s") {
-    playnote(refrequency, 0.5);
+    playnote(refrequency, 0.5, Rekey);
   }
   if (event.key == "d") {
-    playnote(mifrequency, 0.5);
+    playnote(mifrequency, 0.5, Mikey);
   }
   if (event.key == "f") {
-    playnote(fafrequency, 0.5);
+    playnote(fafrequency, 0.5, Fakey);
   }
   if (event.key == "h") {
-    playnote(sofrequency, 0.5);
+    playnote(sofrequency, 0.5, Sokey);
   }
   if (event.key == "j") {
-    playnote(lafrequency, 0.5);
+    playnote(lafrequency, 0.5, Lakey);
   }
   if (event.key == "k") {
-    playnote(tifrequency, 0.5);
+    playnote(tifrequency, 0.5, Tikey);
   }
   if (event.key == "l") {
-    playnote(dofrequency2, 0.5);
+    playnote(dofrequency2, 0.5, Dokey2);
   }
 });
