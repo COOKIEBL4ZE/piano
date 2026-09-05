@@ -1,0 +1,57 @@
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: darkorchid;
+  margin: 0;
+  padding: 0;
+}
+.division {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  border: 50px;
+  font-size: larger;
+}
+
+.L {
+  background-color: blanchedalmond;
+  height: 100px;
+  width: 100px;
+}
+.F {
+  background-color: cornflowerblue;
+  height: 100px;
+  width: 100px;
+}
+.H {
+  background-color: darkgoldenrod;
+  height: 100px;
+  width: 100px;
+}
+.K {
+  background-color: beige;
+  height: 100px;
+  width: 100px;
+}
+.a {
+  background-color: blue;
+  height: 100px;
+  width: 100px;
+}
+.S {
+  background-color: azure;
+  height: 100px;
+  width: 100px;
+}
+.Q {
+  background-color: lime;
+  height: 100px;
+  width: 100px;
+}
+.G {
+  background-color: lightgreen;
+  height: 100px;
+  width: 100px;
+}
